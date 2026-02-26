@@ -31,8 +31,10 @@ export const Hero = () => {
       {/* Bg */}
       <div className="absolute inset-0">
         <img
-          src="/hero-bg.jpg"
-          alt="Hero image"
+          src="/hero-bg.webp"
+          alt="Hero background"
+          loading="eager"
+          fetchPriority="high"
           className="w-full h-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
@@ -139,8 +141,10 @@ export const Hero = () => {
               />
               <div className="relative glass rounded-3xl p-2 glow-border">
                 <img
-                  src="/profile-photo.png"
+                  src="/profile-photo.webp"
                   alt="Abubakar Lawan"
+                  loading="eager"
+                  fetchPriority="high"
                   className="w-full aspect-[4/5] object-cover rounded-2xl"
                 />
 
