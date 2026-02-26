@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Button } from "@/components/Button";
 import {
   ArrowRight,
@@ -9,20 +10,19 @@ import {
 } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 
-const skills = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "JavaScript",
-  "Tailwind CSS",
-  "Firebase",
-  "Node.js",
-  "PostgreSQL",
-  "MongoDB",
-  "Vercel",
-  "Prisma",
-  "Git",
-  "GitHub",
+const skillCategories = [
+  {
+    title: "Frontend",
+    skills: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS"],
+  },
+  {
+    title: "Backend & DB",
+    skills: ["Node.js", "Firebase", "PostgreSQL", "MongoDB", "Prisma"],
+  },
+  {
+    title: "Tools & DevOps",
+    skills: ["Git", "GitHub", "Vercel"],
+  },
 ];
 
 export const Hero = () => {
@@ -169,29 +169,77 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Skills Section */}
-        <div className="mt-20 animate-fade-in animation-delay-600">
-          <p className="text-sm text-muted-foreground mb-6 text-center">
-            Technologies I work with
-          </p>
-          <div className="relative overflow-hidden">
-            <div
-              className="absolute left-0 top-0 bottom-0 w-32
-             bg-gradient-to-r from-background to-transparent z-10"
-            />
-            <div
-              className="absolute right-0 top-0 bottom-0 w-32
-             bg-gradient-to-l from-background to-transparent z-10"
-            />
-            <div className="flex animate-marquee">
-              {[...skills, ...skills].map((skill, idx) => (
-                <div key={idx} className="flex-shrink-0 px-8 py-4">
-                  <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
-                    {skill}
-                  </span>
+        <div className="mt-36 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
+              Technologies I <span className="text-primary">work with</span>
+            </h2>
+            <div className="h-1.5 w-24 bg-primary mx-auto rounded-full" />
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8 relative">
+            {/* Background Ambience */}
+            <div className="absolute -top-20 -left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10 animate-pulse" />
+            <div className="absolute -bottom-20 -right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10 animate-pulse" style={{ animationDelay: '1s' }} />
+
+            {skillCategories.map((category, catIdx) => (
+              <motion.div
+                key={category.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -12 }}
+                transition={{
+                  delay: catIdx * 0.15,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15
+                }}
+                viewport={{ once: true }}
+                className="glass-strong p-8 rounded-[2rem] border border-primary/10 relative overflow-hidden group hover:border-primary/30 transition-all duration-500 shadow-xl hover:shadow-primary/5"
+              >
+                {/* Visual Decoration */}
+                <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-10 group-hover:scale-110 transition-all duration-700 pointer-events-none select-none">
+                  <div className="text-7xl font-black italic">{catIdx + 1}</div>
                 </div>
-              ))}
-            </div>
+
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-8">
+                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(32,178,166,0.6)]" />
+                    <h3 className="text-[10px] uppercase tracking-[0.3em] text-primary font-black">
+                      {category.title}
+                    </h3>
+                  </div>
+
+                  <div className="flex flex-wrap gap-3">
+                    {category.skills.map((skill, idx) => (
+                      <motion.div
+                        key={skill}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: catIdx * 0.1 + idx * 0.05 }}
+                        whileHover={{
+                          scale: 1.1,
+                          backgroundColor: "var(--color-primary)",
+                          color: "#fff",
+                          boxShadow: "0 8px 20px -8px rgba(32, 178, 166, 0.5)"
+                        }}
+                        className="px-4 py-2 rounded-xl glass border border-white/5 text-sm font-bold cursor-default transition-all duration-200"
+                      >
+                        {skill}
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Corner Glow */}
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/10 blur-2xl group-hover:bg-primary/20 transition-colors" />
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
