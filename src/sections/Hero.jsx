@@ -177,7 +177,7 @@ export const Hero = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
-              Technologies I <span className="text-primary">work with</span>
+              Technologies I <span className="text-primary">worked with</span>
             </h2>
             <div className="h-1.5 w-24 bg-primary mx-auto rounded-full" />
           </motion.div>
