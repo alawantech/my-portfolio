@@ -1,38 +1,38 @@
 const experiences = [
   {
-    period: "2022 — Present",
-    role: "Senior Frontend Engineer",
-    company: "Tech Innovators Inc.",
+    period: "2025 — Present",
+    role: "Frontend Developer & Founder",
+    company: "Rady.ng",
     description:
-      "Leading frontend architecture for a suite of fintech products. Implemented micro-frontend architecture, reduced bundle size by 40%, and mentored a team of 5 developers.",
-    technologies: ["React", "TypeScript", "Next.js", "GraphQL"],
+      "Built a scalable store builder platform enabling businesses to create and manage online stores with authentication, payments, and real-time analytics.",
+    technologies: ["React", "Typescript", "Firebase", "Tailwind", "Flutterwave", "Mailsender"],
     current: true,
   },
   {
-    period: "2020 — 2022",
-    role: "Frontend Engineer",
-    company: "Digital Solutions Co.",
+    period: "Jul 2025 – Oct 2025",
+    role: "Frontend Developer (Contract)",
+    company: "Bright Orion Global",
     description:
-      "Built and maintained multiple React applications for enterprise clients. Introduced automated testing practices that improved code coverage to 85%.",
-    technologies: ["React", "Redux", "Jest", "Cypress"],
+      "Developed a full MLM platform with user registration, referral tracking, earnings management, and real-time dashboard for network analytics.",
+    technologies: ["Next.js", "Typescript", "Firebase", "Tailwind", "Paystack"],
     current: false,
   },
   {
-    period: "2019 — 2020",
-    role: "Junior Developer",
-    company: "StartUp Labs",
+    period: "Jan 2025 – Feb 2025",
+    role: "Frontend Developer (Freelance)",
+    company: "Djenepo Couture",
     description:
-      "Contributed to the development of a SaaS platform from MVP to production. Collaborated with designers to implement pixel-perfect UI components.",
-    technologies: ["React", "Node.js", "MongoDB", "AWS"],
+      "Built a responsive fashion e-commerce website with product catalog, filtering, and WhatsApp ordering to improve online customer experience.",
+    technologies: ["React", "JavaScript", "Firebase", "Tailwind", "Mailsender"],
     current: false,
   },
   {
-    period: "2018 — 2019",
-    role: "Freelance Developer",
-    company: "Self-Employed",
+    period: "2023 — 2025",
+    role: "Frontend Developer & Founder",
+    company: "ZedroTech",
     description:
-      "Delivered custom web solutions for small businesses and startups. Built 15+ websites and applications, handling everything from design to deployment.",
-    technologies: ["JavaScript", "PHP", "WordPress", "MySQL"],
+      "Developed a full EdTech platform with course listings, student dashboard, and mentorship features to support structured online learning.",
+    technologies: ["React", "JavaScript", "Firebase", "Tailwind", "Mailsender"],
     current: false,
   },
 ];
@@ -70,8 +70,7 @@ export const Experience = () => {
             className="text-muted-foreground
            animate-fade-in animation-delay-200"
           >
-            A timeline of my professional growth, from curious beginner to
-            senior engineer leading teams and building products at scale.
+            A journey of growth from curious beginner to frontend developer building real-world, production-ready web applications.
           </p>
         </div>
 
@@ -96,11 +95,10 @@ export const Experience = () => {
 
                 {/* Content */}
                 <div
-                  className={`pl-8 md:pl-0 ${
-                    idx % 2 === 0
-                      ? "md:pr-16 md:text-right"
-                      : "md:col-start-2 md:pl-16"
-                  }`}
+                  className={`pl-8 md:pl-0 ${idx % 2 === 0
+                    ? "md:pr-16 md:text-right"
+                    : "md:col-start-2 md:pl-16"
+                    }`}
                 >
                   <div
                     className={`glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500`}
@@ -114,9 +112,8 @@ export const Experience = () => {
                       {exp.description}
                     </p>
                     <div
-                      className={`flex flex-wrap gap-2 mt-4 ${
-                        idx % 2 === 0 ? "md:justify-end" : ""
-                      }`}
+                      className={`flex flex-wrap gap-2 mt-4 ${idx % 2 === 0 ? "md:justify-end" : ""
+                        }`}
                     >
                       {exp.technologies.map((tech, techIdx) => (
                         <span

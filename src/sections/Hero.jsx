@@ -13,21 +13,16 @@ const skills = [
   "React",
   "Next.js",
   "TypeScript",
+  "JavaScript",
+  "Tailwind CSS",
+  "Firebase",
   "Node.js",
-  "GraphQL",
   "PostgreSQL",
   "MongoDB",
-  "Redis",
-  "Docker",
-  "AWS",
   "Vercel",
-  "Tailwind CSS",
   "Prisma",
-  "Jest",
-  "Cypress",
-  "Figma",
   "Git",
-  "GitHub Actions",
+  "GitHub",
 ];
 
 export const Hero = () => {
@@ -47,14 +42,14 @@ export const Hero = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(30)].map((_, i) => (
           <div
+            key={i}
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
             style={{
               backgroundColor: "#20B2A6",
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animation: `slow-drift ${
-                15 + Math.random() * 20
-              }s ease-in-out infinite`,
+              animation: `slow-drift ${15 + Math.random() * 20
+                }s ease-in-out infinite`,
               animationDelay: `${Math.random() * 5}s`,
             }}
           />
@@ -69,7 +64,7 @@ export const Hero = () => {
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Software Engineer • React Specialist
+                Frontend Developer | React & Next.js
               </span>
             </div>
 
@@ -85,7 +80,7 @@ export const Hero = () => {
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I'm Abubakar Lawan — a software engineer specializing in
+                Hi, I'm Abubakar Lawan — a frontend engineer specializing in
                 React, Next.js, and TypeScript. I build scalable, performant web
                 applications that users love.
               </p>
@@ -93,7 +88,14 @@ export const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg">
+              <Button
+                size="lg"
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
                 Contact Me <ArrowRight className="w-5 h-5" />
               </Button>
               <a
@@ -111,9 +113,9 @@ export const Hero = () => {
             <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
               <span className="text-sm text-muted-foreground">Follow me: </span>
               {[
-                { icon: Github, href: "#" },
-                { icon: Linkedin, href: "#" },
-                { icon: Twitter, href: "#" },
+                { icon: Github, href: "https://github.com/alawantech" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/abubakarlawan" },
+
               ].map((social, idx) => (
                 <a
                   key={idx}
@@ -153,9 +155,9 @@ export const Hero = () => {
                 </div>
                 {/* Stats Badge */}
                 <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
-                  <div className="text-2xl font-bold text-primary">2+</div>
+                  <div className="text-2xl font-bold text-primary">Production</div>
                   <div className="text-xs text-muted-foreground">
-                    Years Exp.
+                    Experience
                   </div>
                 </div>
               </div>

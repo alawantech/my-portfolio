@@ -2,39 +2,39 @@ import { ArrowUpRight, Github } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 const projects = [
   {
-    title: "Fintech Dashboard",
+    title: "MLM Platform Website",
     description:
-      "A comprehensive financial analytics platform with real-time data visualization, portfolio management, and AI-powered insights.",
+      "A full MLM web platform with user registration, referral management, earnings tracking, and real-time analytics dashboard.",
     image: "/projects/project1.png",
-    tags: ["React", "Typescript", "NodeJS"],
-    link: "#",
-    github: "#",
+    tags: ["Next.js", "Typescript", "Firebase", "Tailwind", "Paystack"],
+    link: "https://www.brightorionglobal.com/",
+    github: "https://github.com/alawantech/globalorion",
   },
   {
-    title: "E-Commerce Platform",
+    title: "Store Builder Platform",
     description:
-      "A full-featured e-commerce solution with inventory management, payment processing, and analytics dashboard.",
+      "A scalable store builder that enables businesses to create online stores with product management, authentication, and real-time analytics dashboard.",
     image: "/projects/project2.png",
-    tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind"],
-    link: "#",
-    github: "#",
+    tags: ["React", "Typescript", "Firebase", "Tailwind", "Flutterwave", "Mailsender"],
+    link: "https://www.rady.ng/",
+    github: "https://github.com/alawantech/tradyng",
   },
   {
-    title: "AI Writing Assistant",
+    title: "Fashion E-Commerce Website",
     description:
-      "An intelligent writing tool powered by GPT-4, helping users create better content faster.",
+      "A modern e-commerce website with product catalog, filtering, and WhatsApp ordering to streamline customer shopping experience.",
     image: "/projects/project3.png",
-    tags: ["React", "OpenAI", "Python", "FastAPI"],
-    link: "#",
-    github: "#",
+    tags: ["React", "JavaScript", "Firebase", "Tailwind"],
+    link: "https://www.djenepocouture.com/",
+    github: "https://github.com/alawantech/Djenepocouture",
   },
   {
-    title: "Project Management Tool",
+    title: "EdTech Course Platform",
     description:
-      "A collaborative workspace for teams with real-time updates, task tracking, and integrations.",
+      "A full-featured learning platform with course management, student dashboard, and mentorship system for structured online education.",
     image: "/projects/project4.png",
-    tags: ["Next.js", "Socket.io", "MongoDB", "Redis"],
-    link: "#",
+    tags: ["React", "JavaScript", "Firebase", "Tailwind", "Mailsender"],
+    link: "https://school.zedrotech.com/",
     github: "#",
   },
 ];
@@ -107,12 +107,12 @@ export const Projects = () => {
                   <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  <ArrowUpRight
-                    className="w-5 h-5 
-                  text-muted-foreground group-hover:text-primary
-                   group-hover:translate-x-1 
-                   group-hover:-translate-y-1 transition-all"
-                  />
+                  <a
+                    href={project.link}
+                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
+                  >
+                    <ArrowUpRight className="w-5 h-5" />
+                  </a>
                 </div>
                 <p className="text-muted-foreground text-sm">
                   {project.description}
