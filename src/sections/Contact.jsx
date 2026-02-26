@@ -123,6 +123,55 @@ export const Contact = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+
+          {/* Contact Info */}
+          <div className="space-y-6">
+            <div className="glass rounded-3xl p-8">
+              <h3 className="text-xl font-semibold mb-6">
+                Contact Information
+              </h3>
+
+              <div className="space-y-4">
+                {contactInfo.map((item, i) => (
+                  <a
+                    key={i}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <item.icon className="w-5 h-5 text-primary" />
+                    </div>
+
+                    <div>
+                      <div className="text-sm text-muted-foreground">
+                        {item.label}
+                      </div>
+
+                      <div className="font-medium">
+                        {item.value}
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Availability */}
+            <div className="glass rounded-3xl p-8 border border-primary/30">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                <span className="font-medium">
+                  Available for Projects
+                </span>
+              </div>
+
+              <p className="text-muted-foreground text-sm">
+                Open to freelance projects, remote roles, and startup collaborations.
+              </p>
+            </div>
+          </div>
           {/* Contact Form */}
           <div className="glass p-8 rounded-3xl border border-primary/30">
             <form className="space-y-6" onSubmit={handleSubmit}>
@@ -214,54 +263,6 @@ export const Contact = () => {
             </form>
           </div>
 
-          {/* Contact Info */}
-          <div className="space-y-6">
-            <div className="glass rounded-3xl p-8">
-              <h3 className="text-xl font-semibold mb-6">
-                Contact Information
-              </h3>
-
-              <div className="space-y-4">
-                {contactInfo.map((item, i) => (
-                  <a
-                    key={i}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <item.icon className="w-5 h-5 text-primary" />
-                    </div>
-
-                    <div>
-                      <div className="text-sm text-muted-foreground">
-                        {item.label}
-                      </div>
-
-                      <div className="font-medium">
-                        {item.value}
-                      </div>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Availability */}
-            <div className="glass rounded-3xl p-8 border border-primary/30">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                <span className="font-medium">
-                  Available for Projects
-                </span>
-              </div>
-
-              <p className="text-muted-foreground text-sm">
-                Open to freelance projects, remote roles, and startup collaborations.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
